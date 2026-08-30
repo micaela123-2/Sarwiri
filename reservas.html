@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservar Tour — SARWIRI · Tarapacá</title>
+  <meta name="description" content="Reserva tu tour favorito en la Región de Tarapacá. Elige fecha, cantidad de personas y completa tu reserva de forma segura con SARWIRI.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/sarwiri.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="sarwiri-navbar navbar navbar-expand-lg" id="main-navbar">
+    <div class="container">
+      <a class="navbar-brand-sarwiri" href="index.html" id="brand-logo">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SAR<span>WIRI</span></span>
+          <span class="brand-sub">Tarapacá · Chile</span>
+        </div>
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" id="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <ul class="navbar-nav align-items-lg-center gap-lg-1 mt-3 mt-lg-0 me-lg-4">
+          <li class="nav-item"><a class="nav-link" href="index.html" id="nav-inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html" id="nav-tours">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinos.html" id="nav-destinos">Destinos</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contacto-section" id="nav-contacto">Contacto</a></li>
+        </ul>
+        <a href="tours.html" class="nav-cta nav-link mt-2 mt-lg-0" id="nav-cta-tours">Ver todos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="reserva-page-header" id="reserva-header">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400&q=80');background-size:cover;background-position:center;opacity:0.15;"></div>
+    <div class="container reserva-header-content">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="--bs-breadcrumb-divider-color:rgba(255,255,255,0.4);font-size:0.82rem;">
+          <li class="breadcrumb-item"><a href="index.html" style="color:rgba(255,255,255,0.55);">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="tours.html" style="color:rgba(255,255,255,0.55);">Tours</a></li>
+          <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.85);" aria-current="page">Reservar</li>
+        </ol>
+      </nav>
+      <h1 id="reserva-page-title">Reservar <span style="color:var(--ocre);">tu tour</span></h1>
+      <p id="reserva-page-desc">Completa los datos para confirmar tu reserva. Responderemos en menos de 24 horas.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="section-py" style="background:var(--gris-light);">
+    <div class="container">
+
+      <!-- STEPS INDICATOR -->
+      <div class="steps-indicator mb-4" id="steps-indicator">
+        <div class="step-item">
+          <div class="step-num done" data-step="1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="step-label done" data-step="1">Elige tour</span>
+        </div>
+        <div class="step-line done" data-step="1"></div>
+        <div class="step-item">
+          <div class="step-num active" data-step="2">2</div>
+          <span class="step-label active" data-step="2">Tus datos</span>
+        </div>
+        <div class="step-line" data-step="2"></div>
+        <div class="step-item">
+          <div class="step-num" data-step="3">3</div>
+          <span class="step-label" data-step="3">Confirmación</span>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- FORM COLUMN -->
+        <div class="col-lg-7">
+
+          <!-- TOUR SELECTOR -->
+          <div class="reserva-form-card mb-3" id="tour-selector-card">
+            <h4>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Selecciona tu tour
+            </h4>
+            <label class="form-label-sarwiri" for="res-tour">Tour a reservar</label>
+            <select class="form-control-sarwiri" id="res-tour" style="padding-left:1rem;">
+              <!-- Poblado por JS -->
+            </select>
+          </div>
+
+          <!-- FORM DATOS -->
+          <form class="reserva-form-card" id="reserva-form">
+            <h4>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Datos personales
+            </h4>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label-sarwiri" for="res-nombre">Nombre</label>
+                <input type="text" class="form-control-sarwiri" id="res-nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-sarwiri" for="res-apellido">Apellido</label>
+                <input type="text" class="form-control-sarwiri" id="res-apellido" placeholder="Tu apellido" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-sarwiri" for="res-email">Correo electrónico</label>
+                <input type="email" class="form-control-sarwiri" id="res-email" placeholder="correo@ejemplo.com" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-sarwiri" for="res-telefono">Teléfono / WhatsApp</label>
+                <input type="tel" class="form-control-sarwiri" id="res-telefono" placeholder="+56 9 XXXX XXXX" required>
+              </div>
+            </div>
+
+            <hr style="border-color:#E5E7EB;margin:1.5rem 0;">
+
+            <h4 class="mt-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Detalles de la reserva
+            </h4>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label-sarwiri" for="res-fecha">Fecha del tour</label>
+                <input type="date" class="form-control-sarwiri" id="res-fecha" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-sarwiri" for="res-personas">Número de personas</label>
+                <select class="form-control-sarwiri" id="res-personas" style="padding-left:1rem;" required>
+                  <option value="1">1 persona</option>
+                  <option value="2">2 personas</option>
+                  <option value="3">3 personas</option>
+                  <option value="4">4 personas</option>
+                  <option value="5">5 personas</option>
+                  <option value="6">6 personas</option>
+                  <option value="8">8 personas</option>
+                  <option value="10">10 personas</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label-sarwiri" for="res-comentarios">Comentarios o requerimientos especiales</label>
+                <textarea class="form-control-sarwiri" id="res-comentarios" rows="3" placeholder="Alergias, necesidades especiales, preguntas..." style="padding-left:1rem;resize:vertical;"></textarea>
+              </div>
+            </div>
+
+            <hr style="border-color:#E5E7EB;margin:1.5rem 0;">
+
+            <!-- TÉRMINOS -->
+            <div class="d-flex align-items-start gap-2 mb-3" id="terminos-check">
+              <input type="checkbox" id="res-terminos" required style="margin-top:3px;accent-color:var(--azul-profundo);width:16px;height:16px;flex-shrink:0;">
+              <label for="res-terminos" style="font-size:0.82rem;color:var(--gris-med);cursor:pointer;line-height:1.5;">
+                Acepto los <a href="#" style="color:var(--azul-profundo);font-weight:600;">términos y condiciones</a> de reserva, incluyendo la política de cancelación (48 horas antes sin costo).
+              </label>
+            </div>
+
+            <button type="submit" class="btn-confirmar-reserva" id="btn-confirmar">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Confirmar reserva
+            </button>
+
+            <!-- Mensaje post-reserva -->
+            <a href="https://wa.me/56912345678?text=Hola%2C%20acabo%20de%20realizar%20una%20reserva%20en%20SARWIRI" target="_blank" rel="noopener" class="btn-whatsapp hidden mt-3" id="wa-redirect-btn" style="font-size:0.9rem;padding:0.75rem 1.5rem;border-radius:var(--radius-md);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              También puedes confirmar por WhatsApp
+            </a>
+          </form>
+        </div>
+
+        <!-- SUMMARY COLUMN -->
+        <div class="col-lg-5">
+          <div class="tour-summary-card" id="tour-summary-card">
+            <img id="summary-img" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Tour seleccionado" class="tour-summary-img">
+            <div class="tour-summary-body">
+              <h5 id="summary-tour-name">Cargando tour...</h5>
+              <div class="summary-line">
+                <span>Duración</span>
+                <strong id="summary-duracion">—</strong>
+              </div>
+              <div class="summary-line">
+                <span>Destino</span>
+                <strong id="summary-destino">—</strong>
+              </div>
+              <div class="summary-line">
+                <span>Precio por persona</span>
+                <strong id="summary-precio-unit">—</strong>
+              </div>
+              <div class="summary-line">
+                <span>Personas</span>
+                <strong id="summary-personas">—</strong>
+              </div>
+              <div class="summary-total">
+                <span>Total estimado</span>
+                <strong id="summary-total">—</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Garantías -->
+          <div class="why-card mt-3" style="padding:1.25rem;" id="garantias-card">
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-start gap-2">
+                <div class="why-icon icon-green" style="width:32px;height:32px;border-radius:8px;flex-shrink:0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:0.85rem;font-weight:700;color:var(--oscuro);">Reserva garantizada</div>
+                  <div style="font-size:0.78rem;color:var(--gris-med);">Tu pago y datos están 100% protegidos.</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-start gap-2">
+                <div class="why-icon icon-ocre" style="width:32px;height:32px;border-radius:8px;flex-shrink:0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:0.85rem;font-weight:700;color:var(--oscuro);">Cancelación gratuita</div>
+                  <div style="font-size:0.78rem;color:var(--gris-med);">Cancela hasta 48 hrs antes sin costo.</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-start gap-2">
+                <div class="why-icon icon-blue" style="width:32px;height:32px;border-radius:8px;flex-shrink:0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:0.85rem;font-weight:700;color:var(--oscuro);">Respuesta en 24 hrs</div>
+                  <div style="font-size:0.78rem;color:var(--gris-med);">Te confirmamos vía email o WhatsApp.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto directo -->
+          <div style="background:var(--azul-pale);border-radius:var(--radius-md);padding:1rem 1.25rem;margin-top:1rem;text-align:center;" id="contacto-directo">
+            <p style="font-size:0.82rem;color:var(--azul-profundo);margin-bottom:0.5rem;">¿Prefieres reservar directamente?</p>
+            <a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--azul-profundo);font-weight:700;font-size:0.85rem;text-decoration:none;" id="wa-direct">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              +56 9 1234 5678 — WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER COMPACTO -->
+  <footer class="sarwiri-footer">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top:0;">
+        <span class="footer-copy">© 2026 SARWIRI — Sistema de Reservas de Tours · Región de Tarapacá</span>
+        <div class="d-flex gap-3">
+          <a href="index.html" style="color:rgba(255,255,255,0.45);font-size:0.82rem;text-decoration:none;">Inicio</a>
+          <a href="tours.html" style="color:rgba(255,255,255,0.45);font-size:0.82rem;text-decoration:none;">Tours</a>
+          <a href="destinos.html" style="color:rgba(255,255,255,0.45);font-size:0.82rem;text-decoration:none;">Destinos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <div class="whatsapp-float" id="whatsapp-float">
+    <span class="whatsapp-float-tooltip">¡Reserva por WhatsApp!</span>
+    <a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="whatsapp-float-btn" id="whatsapp-float-btn" aria-label="WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <div class="toast-container-sarwiri" id="toast-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/sarwiri.js"></script>
+</body>
+</html>
